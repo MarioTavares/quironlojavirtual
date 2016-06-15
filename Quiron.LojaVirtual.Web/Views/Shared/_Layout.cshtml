@@ -13,26 +13,21 @@
 
 
     <div class="navbar navbar-inverse" role="navigation">
-
-        <a class="navbar-brand" href="#">Quiron Loja Virtual - Seu esporte é aqui</a>
-
-
-
+        <a class="navbar-brand" href="#">Quiron Loja Virtual - Seu esporte é aqui </a>
     </div>
+    <div class="row panel">
+        <div id="categorias" class="col-xs-3">
+            @Html.Action("Menu","categoria")
+        </div>
 
-    <div id="Categorias" class="col-xs-3">
-        Minhas Categorias
 
-    </div>
-
-    <div id="Categorias" class="col-xs-8">
-
-        @RenderBody()
-
+        <div id="categorias" class="col-xs-8">
+            @RenderBody()
+        </div>
     </div>
 
 
-
+   
 
 </body>
 </html>
