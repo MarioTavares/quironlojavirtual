@@ -38,9 +38,9 @@
                 <td class="text-right">@((item.Quantidade * item.Produto.Preco).ToString("c"))</td>
                 <td>
 
-                    @using (Html.BeginForm("Remove","Carrinho"))
+                    @using (Html.BeginForm("Remover","Carrinho"))
                    {
-                        @Html.Hidden("produtoId", item.Produto.produtoId)
+                        @Html.Hidden("produtoId", item.Produto.ProdutoId)
                         @Html.HiddenFor(x => x.ReturnUrl)
                         <input class="btn btn-sm btn-warning" type="submit" value="Remover" />
                    }
@@ -67,6 +67,6 @@
 
     <a class="btn btn-primary" href="@Model.ReturnUrl">Continuar Comprando</a>
 
-    @Html.ActionLink("Fechar o pedido","Fechar Pedido","Carrinho", new {@class="btn btn-primary"})
+    @Html.ActionLink("Fechar o pedido","FecharPedido","Carrinho", new { @class="btn btn-primary" })
 
 </div>

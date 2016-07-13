@@ -14,7 +14,7 @@ namespace Quiron.LojaVirtual.Dominio.Entidade
         public void AdicionarItem(Produto produto, int quantidade)
         {
 
-            ItemCarrinho item = _itemCarrinho.FirstOrDefault(p => p.Produto.produtoId == produto.produtoId);
+            ItemCarrinho item = _itemCarrinho.FirstOrDefault(p => p.Produto.ProdutoId == produto.ProdutoId);
 
             if (item == null)
             {
@@ -44,7 +44,7 @@ namespace Quiron.LojaVirtual.Dominio.Entidade
         public void RemoverItem(Produto produto)
         {
 
-            _itemCarrinho.RemoveAll(l => l.Produto.produtoId == produto.produtoId);
+            _itemCarrinho.RemoveAll(l => l.Produto.ProdutoId == produto.ProdutoId);
 
 
         }

@@ -21,21 +21,21 @@ namespace Quiron.LojaVirtual.Unittest
             Produto produto1 = new Produto
             {
 
-                produtoId = 1,
+                ProdutoId = 1,
                 Nome = "Teste1"
             };
 
             Produto produto2 = new Produto
             {
 
-                produtoId = 2,
+                ProdutoId = 2,
                 Nome = "Teste2"
             };
 
             Produto produto3 = new Produto
             {
 
-                produtoId = 3,
+                ProdutoId = 3,
                 Nome = "Teste3"
             };
 
@@ -64,14 +64,14 @@ namespace Quiron.LojaVirtual.Unittest
             Produto produto1 = new Produto
             {
 
-                produtoId = 1,
+                ProdutoId = 1,
                 Nome = "Teste1"
             };
 
             Produto produto2 = new Produto
             {
 
-                produtoId = 2,
+                ProdutoId = 2,
                 Nome = "Teste2"
             };
 
@@ -85,7 +85,7 @@ namespace Quiron.LojaVirtual.Unittest
             carrinho.AdicionarItem(produto1, 10);
 
             ItemCarrinho[] resultado = carrinho.ItensCarrinho
-                .OrderBy(c => c.Produto.produtoId).ToArray();
+                .OrderBy(c => c.Produto.ProdutoId).ToArray();
 
             Assert.AreEqual(resultado.Length, 2);
 
@@ -106,21 +106,21 @@ namespace Quiron.LojaVirtual.Unittest
             Produto produto1 = new Produto
             {
 
-                produtoId = 1,
+                ProdutoId = 1,
                 Nome = "Teste1"
             };
 
             Produto produto2 = new Produto
             {
 
-                produtoId = 2,
+                ProdutoId = 2,
                 Nome = "Teste2"
             };
 
             Produto produto3 = new Produto
             {
 
-                produtoId = 3,
+                ProdutoId = 3,
                 Nome = "Teste3"
             };
 
@@ -153,7 +153,7 @@ namespace Quiron.LojaVirtual.Unittest
 
             Produto produto1 = new Produto
             {
-                produtoId = 1,
+                ProdutoId = 1,
                 Nome = "Teste 1",
                 Preco = 100M
 
@@ -161,7 +161,7 @@ namespace Quiron.LojaVirtual.Unittest
 
             Produto produto2 = new Produto
             {
-                produtoId = 2,
+                ProdutoId = 2,
                 Nome = "Teste 2",
                 Preco = 50M
             };
@@ -187,7 +187,7 @@ namespace Quiron.LojaVirtual.Unittest
 
             Produto produto1 = new Produto
             {
-                produtoId = 1,
+                ProdutoId = 1,
                 Nome = "Teste 1",
                 Preco = 100M
 
@@ -195,7 +195,7 @@ namespace Quiron.LojaVirtual.Unittest
 
             Produto produto2 = new Produto
             {
-                produtoId = 2,
+                ProdutoId = 2,
                 Nome = "Teste 2",
                 Preco = 50M
             };
