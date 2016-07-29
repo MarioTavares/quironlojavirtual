@@ -1,0 +1,14 @@
+﻿
+.input-validation-error
+{
+    border:solid 1px #ff0000;
+    background-color:#dcb1b1;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color:#ff0000;
+
+}
+
