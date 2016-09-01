@@ -71,8 +71,12 @@ namespace Quiron.LojaVirtual.Dominio.Entidade
 
         public IEnumerable<ItemCarrinho> ItensCarrinho
         {
+           
 
-            get { return _itemCarrinho; }
+             get { return _itemCarrinho; }
+
+        
+           
         }
 
 

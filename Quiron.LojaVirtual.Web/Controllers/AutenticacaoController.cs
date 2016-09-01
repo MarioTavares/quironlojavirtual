@@ -49,7 +49,7 @@ namespace Quiron.LojaVirtual.Web.Controllers
                             return Redirect(returnUrl);
                     }
 
-
+                    return RedirectToAction("Index", "produto", new {area = "Administrativo" });
 
                 }
                 else
