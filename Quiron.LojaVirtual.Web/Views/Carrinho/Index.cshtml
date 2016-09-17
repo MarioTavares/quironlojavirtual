@@ -11,6 +11,16 @@
         vertical-align: middle;
     }
 </style>
+<script language='JavaScript'>
+    function SomenteNumero(e) {
+        var tecla = (window.event) ? event.keyCode : e.which;
+        if ((tecla > 47 && tecla < 58)) return true;
+        else {
+            if (tecla == 8 || tecla == 0) return true;
+            else return false;
+        }
+    }
+</script>
 
 
 <h2>Seu Carrinho</h2>
@@ -19,9 +29,11 @@
     <thead>
 
         <tr>
-            <th>Quantidade</th>
+            
             <th>Produto</th>
+           
             <th class="text-right">Preço</th>
+            <th>Quantidade</th>
             <th class="text-right">Sub Total</th>
 
         </tr>
@@ -30,20 +42,31 @@
     </thead>
     <tbody>
 
-        @foreach(var item in Model.Carrinho.ItensCarrinho){
+        @foreach (var item in Model.Carrinho.ItensCarrinho)
+        {
             <tr>
-                <td class="text-center">@item.Quantidade</td>
+                @*<td class="text-center">@item.Quantidade</td>*@
                 <td class="text-center">@item.Produto.Nome</td>
                 <td class="text-right">@item.Produto.Preco.ToString("c")</td>
+                <td>
+                    @using (Html.BeginForm("Adicionar", "Carrinho"))
+                    {
+                        @Html.Hidden("ProdutoId", item.Produto.ProdutoId)
+                        @Html.HiddenFor(x => x.ReturnUrl)
+                        @Html.TextBox("quantidade", item.Quantidade, new { @class = "quantidade", @type = "number", min = "1", max = "10" })
+    <input class="btn-sm btn-danger" type="submit" value="Atualizar " onkeypress="SomenteNumero" />
+                    }
+
+                </td>
                 <td class="text-right">@((item.Quantidade * item.Produto.Preco).ToString("c"))</td>
                 <td>
 
-                    @using (Html.BeginForm("Remover","Carrinho"))
-                   {
+                    @using (Html.BeginForm("Remover", "Carrinho"))
+                    {
                         @Html.Hidden("produtoId", item.Produto.ProdutoId)
                         @Html.HiddenFor(x => x.ReturnUrl)
                         <input class="btn btn-sm btn-warning" type="submit" value="Remover" />
-                   }
+                    }
 
                 </td>
             </tr>
@@ -67,6 +90,6 @@
 
     <a class="btn btn-primary" href="@Model.ReturnUrl">Continuar Comprando</a>
 
-    @Html.ActionLink("Fechar o pedido","FecharPedido","Carrinho", new { @class="btn btn-primary" })
+    @Html.ActionLink("Fechar o pedido", "FecharPedido", "Carrinho", new { @class = "btn btn-primary" })
 
 </div>
