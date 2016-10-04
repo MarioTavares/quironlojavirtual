@@ -15,7 +15,6 @@
     @Styles.Render("~/css")
     @Styles.Render("~/Content/startmenu")
 
-    <link href="~/Content/sm-core-css.css" rel="stylesheet" />
     <!-- Favicon -->
     <link rel="shortcut icon" href="#">
 </head>
@@ -23,7 +22,7 @@
 <body>
 
 
-    @RenderBody()
+
 
 
 
@@ -126,7 +125,15 @@
 
     <div class="page-content blocky">
         <div class="container">
+            @RenderBody()
+        </div>
+    </div>
 
+
+
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            @Html.Partial("_Marcas")
         </div>
     </div>
 
@@ -347,4 +354,3 @@
 
 </body>
 </html>
-

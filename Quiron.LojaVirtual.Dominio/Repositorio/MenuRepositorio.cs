@@ -43,5 +43,12 @@ namespace Quiron.LojaVirtual.Dominio.Repositorio
 
         }
 
+        public IEnumerable<Genero> ObterGenero()
+        {
+            return _context.Generos.OrderBy(g => g.GeneroDescricao);
+
+        }
+
+
     }
 }
